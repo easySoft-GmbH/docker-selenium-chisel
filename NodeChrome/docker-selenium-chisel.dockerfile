@@ -1,4 +1,4 @@
-FROM selenium/standalone-chrome:4.3.0-20220706
+FROM selenium/standalone-chrome:4.4.0-20220831
 LABEL maintainer="e.louvard@easysoft.de"
 
 # inspirate from https://github.com/containerize-my-server/docker-image-selenium-with-tunnel
