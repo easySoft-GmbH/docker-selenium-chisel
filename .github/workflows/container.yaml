@@ -11,7 +11,7 @@ on:
 
 jobs:
     build-and-deploy:
-        runs-on: ubuntu-20.04
+        runs-on: ubuntu-22.04
         steps:
         # checkout the repo
         - name: 'Checkout GitHub Action'
@@ -30,5 +30,5 @@ jobs:
             password: ${{ secrets.REGISTRY_PASSWORD }}
         - run: |
             docker build -f ./NodeChrome/docker-selenium-chisel.dockerfile -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/docker-selenium-chisel:1.7.7-4.4.0-20220831-${{ github.sha }} ./NodeChrome/
-            docker tag ${{ secrets.REGISTRY_LOGIN_SERVER }}/docker-selenium-chisel:1.7.7-4.4.0-20220831-${{ github.sha }} ${{ secrets.REGISTRY_LOGIN_SERVER }}/docker-selenium-chisel:1.7.7-4.4.0-20220831
+            docker tag ${{ secrets.REGISTRY_LOGIN_SERVER }}/docker-selenium-chisel:1.9.1-4.15.0-20231110-${{ github.sha }} ${{ secrets.REGISTRY_LOGIN_SERVER }}/docker-selenium-chisel:1.9.1-4.15.0-20231110
             docker push --all-tags ${{ secrets.REGISTRY_LOGIN_SERVER }}/docker-selenium-chisel
