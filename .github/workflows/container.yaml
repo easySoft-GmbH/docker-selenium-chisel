@@ -29,7 +29,7 @@ jobs:
             username: ${{ secrets.REGISTRY_USERNAME }}
             password: ${{ secrets.REGISTRY_PASSWORD }}
         - run: |
-            docker build -f ./NodeChrome/docker-selenium-chisel.dockerfile -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/docker-selenium-chisel:1.9.1-4.15.0-20231120-${{ github.sha }} ./NodeChrome/
-            docker tag ${{ secrets.REGISTRY_LOGIN_SERVER }}/docker-selenium-chisel:1.9.1-4.15.0-20231120-${{ github.sha }} ${{ secrets.REGISTRY_LOGIN_SERVER }}/docker-selenium-chisel:1.9.1-4.15.0-20231120
-            docker tag ${{ secrets.REGISTRY_LOGIN_SERVER }}/docker-selenium-chisel:1.9.1-4.15.0-20231120-${{ github.sha }} ${{ secrets.REGISTRY_LOGIN_SERVER }}/docker-selenium-chisel:latest
+            docker build -f ./NodeChrome/docker-selenium-chisel.dockerfile -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/docker-selenium-chisel:1.9.1-4.14.1-20231025-${{ github.sha }} ./NodeChrome/
+            docker tag ${{ secrets.REGISTRY_LOGIN_SERVER }}/docker-selenium-chisel:1.9.1-4.14.1-20231025-${{ github.sha }} ${{ secrets.REGISTRY_LOGIN_SERVER }}/docker-selenium-chisel:1.9.1-4.14.1-20231025
+            docker tag ${{ secrets.REGISTRY_LOGIN_SERVER }}/docker-selenium-chisel:1.9.1-4.14.1-20231025-${{ github.sha }} ${{ secrets.REGISTRY_LOGIN_SERVER }}/docker-selenium-chisel:latest
             docker push --all-tags ${{ secrets.REGISTRY_LOGIN_SERVER }}/docker-selenium-chisel
